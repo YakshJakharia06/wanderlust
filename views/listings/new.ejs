@@ -1,0 +1,194 @@
+
+<% layout('layouts/boilerplate') %>
+
+<div class="create-listing-page">
+
+	<!-- Page Header -->
+	<div class="create-listing-header">
+		<span class="section-tag">WANDERLUST HOSTING</span>
+		<h1>Create a New Listing</h1>
+		<p>Share your property with travelers and give them a place to make
+			memories.</p>
+	</div>
+
+	<!-- Form Card -->
+	<div class="create-listing-card">
+
+		<div class="create-form-heading">
+			<div class="create-form-icon">
+				<i class="fa-solid fa-house"></i>
+			</div>
+
+			<div>
+				<h2>Listing Details</h2>
+				<p>Fill in the information about your property.</p>
+			</div>
+		</div>
+
+		<hr class="create-form-divider">
+
+		<form action="/listings" method="POST"
+			class="needs-validation create-listing-form" novalidate
+			enctype="multipart/form-data">
+			
+			<!-- here enctype="multipart/form-data" is used for uploading files, links, etc. here we have to used to upload images for listings -->
+
+			<!-- Title -->
+			<div class="mb-4">
+				<label for="title" class="form-label">
+					Listing Title <span class="required-star">*</span>
+				</label>
+
+				<input
+					type="text"
+					id="title"
+					name="listing[title]"
+					placeholder="e.g. Beautiful Villa in Lonavala"
+					class="form-control"
+					required
+					minlength="3"
+					maxlength="100">
+
+				<div class="invalid-feedback">
+					Please enter a title with at least 3 characters.
+				</div>
+			</div>
+
+			<!-- Description -->
+			<div class="mb-4">
+				<label for="description" class="form-label">
+					Description <span class="required-star">*</span>
+				</label>
+
+				<textarea
+					id="description"
+					name="listing[description]"
+					placeholder="Describe your property, amenities, views, and what makes it special..."
+					class="form-control create-description"
+					rows="5"
+					required
+					minlength="10"></textarea>
+
+				<div class="invalid-feedback">
+					Please provide a description of at least 10 characters.
+				</div>
+			</div>
+
+			<!-- Image URL -->
+			<div class="mb-4">
+				<!-- <label for="image" class="form-label">
+					Property Image URL
+				</label>
+
+				<div class="input-with-icon">
+					<i class="fa-regular fa-image"></i>
+					<input
+						type="url"
+						id="image"
+						name="listing[image]"
+						placeholder="https://example.com/your-property.jpg"
+						class="form-control">
+				</div> -->
+				<div class="mb-3">
+					<label for="image" class="form-label">Upload Image</label>
+					<input type="file" name="listing[image]" class="form-control">
+				</div>
+
+				<div class="form-text">
+					Paste a direct URL to an image of your property.
+				</div>
+			</div>
+
+			<!-- Price and Location -->
+			<div class="row g-3 mb-4">
+
+				<div class="col-12 col-md-4">
+					<label for="price" class="form-label">
+						Price per Night (₹)
+						<span class="required-star">*</span>
+					</label>
+
+					<div class="input-with-icon">
+						<i class="fa-solid fa-indian-rupee-sign"></i>
+						<input
+							type="number"
+							id="price"
+							name="listing[price]"
+							placeholder="2500"
+							class="form-control"
+							min="1"
+							step="1"
+							required>
+					</div>
+
+					<div class="invalid-feedback">
+						Please enter a valid price.
+					</div>
+				</div>
+
+				<div class="col-12 col-md-8">
+					<label for="location" class="form-label">
+						Location <span class="required-star">*</span>
+					</label>
+
+					<div class="input-with-icon">
+						<i class="fa-solid fa-location-dot"></i>
+						<input
+							type="text"
+							id="location"
+							name="listing[location]"
+							placeholder="e.g. Lonavala, Maharashtra"
+							class="form-control"
+							required>
+					</div>
+
+					<div class="invalid-feedback">
+						Please enter the property location.
+					</div>
+				</div>
+
+			</div>
+
+			<!-- Country -->
+			<div class="mb-4">
+				<label for="country" class="form-label">
+					Country <span class="required-star">*</span>
+				</label>
+
+				<div class="input-with-icon">
+					<i class="fa-solid fa-globe"></i>
+					<input
+						type="text"
+						id="country"
+						name="listing[country]"
+						placeholder="e.g. India"
+						class="form-control"
+						required>
+				</div>
+
+				<div class="invalid-feedback">
+					Please enter the country.
+				</div>
+			</div>
+
+			<!-- Form Actions -->
+			<div class="create-form-actions">
+				<a href="/listings" class="btn btn-light cancel-listing-btn">
+					Cancel
+				</a>
+
+				<button type="submit" class="btn btn-dark create-listing-submit">
+					<i class="fa-solid fa-plus"></i>
+					Create Listing
+				</button>
+			</div>
+
+			<p class="form-footer-note">
+				<i class="fa-solid fa-circle-info"></i>
+				Fields marked with <span class="required-star">*</span> are required.
+			</p>
+
+		</form>
+	</div>
+
+</div>

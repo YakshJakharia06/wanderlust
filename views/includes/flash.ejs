@@ -1,0 +1,30 @@
+<% if (success && success.length > 0) { %>
+	<% success.forEach(message => { %>
+	<div class="alert alert-success alert-dismissible fade show m-2" role="alert">
+		<%= message %>
+		<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+	</div>
+	<% }) %>
+<% } %>
+
+<% if (deleted && deleted.length > 0) { %>
+	<% deleted.forEach(message => { %>
+	<div class="alert alert-danger theme-danger m-2" role="alert">
+		<div class="danger-p">
+			<%= message %>
+		</div>
+		<button type="button" class="btn-close close-danger" data-bs-dismiss="alert"></button>
+	</div>
+	<% }) %>
+<% } %>
+
+<% if (error && error.length > 0) { %>
+	<% error.forEach(message => { %>
+	<div class="alert alert-danger theme-danger m-2" role="alert">
+		<div class="danger-p">
+			<%= message %>
+		</div>
+		<button type="button" class="btn-close close-danger" data-bs-dismiss="alert"></button>
+	</div>
+	<% }) %>
+<% } %>

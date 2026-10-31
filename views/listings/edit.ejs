@@ -1,0 +1,214 @@
+
+<% layout('layouts/boilerplate') %>
+
+<div class="create-listing-page">
+
+	<!-- Page Header -->
+	<div class="create-listing-header">
+		<span class="section-tag">MANAGE YOUR PROPERTY</span>
+		<h1>Edit Your Listing</h1>
+		<p>Update your property details to keep your listing accurate and
+			attractive.</p>
+	</div>
+
+	<!-- Edit Form Card -->
+	<div class="create-listing-card">
+
+		<div class="create-form-heading">
+			<div class="create-form-icon">
+				<i class="fa-regular fa-pen-to-square"></i>
+			</div>
+
+			<div>
+				<h2>Listing Details</h2>
+				<p>Make changes to your existing property.</p>
+			</div>
+		</div>
+
+		<hr class="create-form-divider">
+
+		<form
+			action="/listings/<%= listing._id %>?_method=PUT"
+			method="POST"
+			class="needs-validation create-listing-form"
+			enctype="multipart/form-data"
+			novalidate>
+
+			<!-- Title -->
+			<div class="mb-4">
+				<label for="title" class="form-label">
+					Listing Title <span class="required-star">*</span>
+				</label>
+
+				<input
+					type="text"
+					id="title"
+					name="listing[title]"
+					value="<%= listing.title %>"
+					placeholder="Enter listing title"
+					class="form-control"
+					required
+					minlength="3"
+					maxlength="100">
+
+				<div class="invalid-feedback">
+					Please enter a title with at least 3 characters.
+				</div>
+			</div>
+
+			<!-- Description -->
+			<div class="mb-4">
+				<label for="description" class="form-label">
+					Description <span class="required-star">*</span>
+				</label>
+
+				<textarea
+					id="description"
+					name="listing[description]"
+					placeholder="Describe your property..."
+					class="form-control create-description"
+					rows="5"
+					required
+					minlength="10"><%= listing.description %></textarea>
+
+				<div class="invalid-feedback">
+					Please provide a description of at least 10 characters.
+				</div>
+			</div>
+
+			<!-- Current Image Preview -->
+			<div class="mb-4">
+				<label class="form-label">Current Property Image</label>
+
+				<div class="edit-image-preview">
+					<img
+						src="<%= originalImageUrl %>"
+						alt="Current image of <%= listing.title %>"
+						onerror="this.style.display='none'">
+					<div class="edit-image-overlay">
+						<i class="fa-regular fa-image"></i>
+						Current image
+					</div>
+				</div>
+			</div>
+
+			<!-- Image URL -->
+			<div class="mb-4">
+				<label for="image" class="form-label">
+					New Image Upload
+				</label>
+
+				<div class="input-with-icon">
+					<i class="fa-regular fa-image"></i>
+					<input
+						type="file"
+						id="image"
+						name="listing[image]"
+						class="form-control">
+				</div>
+
+				<!-- <div class="form-text">
+					Replace the Image file .
+				</div> -->
+			</div>
+
+			<!-- Price and Location -->
+			<div class="row g-3 mb-4">
+
+				<div class="col-12 col-md-4">
+					<label for="price" class="form-label">
+						Price per Night (₹)
+						<span class="required-star">*</span>
+					</label>
+
+					<div class="input-with-icon">
+						<i class="fa-solid fa-indian-rupee-sign"></i>
+						<input
+							type="number"
+							id="price"
+							name="listing[price]"
+							value="<%= listing.price %>"
+							placeholder="2500"
+							class="form-control"
+							min="1"
+							step="1"
+							required>
+					</div>
+
+					<div class="invalid-feedback">
+						Please enter a valid price.
+					</div>
+				</div>
+
+				<div class="col-12 col-md-8">
+					<label for="location" class="form-label">
+						Location <span class="required-star">*</span>
+					</label>
+
+					<div class="input-with-icon">
+						<i class="fa-solid fa-location-dot"></i>
+						<input
+							type="text"
+							id="location"
+							name="listing[location]"
+							value="<%= listing.location %>"
+							placeholder="Enter property location"
+							class="form-control"
+							required>
+					</div>
+
+					<div class="invalid-feedback">
+						Please enter the location.
+					</div>
+				</div>
+
+			</div>
+
+			<!-- Country -->
+			<div class="mb-4">
+				<label for="country" class="form-label">
+					Country <span class="required-star">*</span>
+				</label>
+
+				<div class="input-with-icon">
+					<i class="fa-solid fa-globe"></i>
+					<input
+						type="text"
+						id="country"
+						name="listing[country]"
+						value="<%= listing.country %>"
+						placeholder="Enter country"
+						class="form-control"
+						required>
+				</div>
+
+				<div class="invalid-feedback">
+					Please enter the country.
+				</div>
+			</div>
+
+			<!-- Actions -->
+			<div class="create-form-actions">
+				<a
+					href="/listings/<%= listing._id %>"
+					class="btn btn-light cancel-listing-btn">
+					Cancel
+				</a>
+
+				<button
+					type="submit"
+					class="btn btn-dark create-listing-submit">
+					<i class="fa-solid fa-check"></i>
+					Save Changes
+				</button>
+			</div>
+
+			<p class="form-footer-note">
+				<i class="fa-solid fa-circle-info"></i>
+				Review your changes before saving.
+			</p>
+
+		</form>
+	</div>
+
+</div>

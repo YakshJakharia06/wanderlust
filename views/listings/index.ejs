@@ -1,0 +1,205 @@
+
+<% layout('layouts/boilerplate') %>
+
+<div class="listings-page container-fluid">
+
+	<!-- filters -->
+	<!-- Filters -->
+	<div id="filters">
+
+		<!-- Scrollable filters -->
+		<div class="filters-viewport" id="filtersViewport">
+			<div class="filters-track">
+
+				<div class="filter">
+					<i class="fa-solid fa-fire"></i>
+					<p class="filter-name">Trending</p>
+				</div>
+
+				<div class="filter">
+					<i class="fa-solid fa-bed"></i>
+					<p>Rooms</p>
+				</div>
+
+				<div class="filter">
+					<i class="fa-solid fa-umbrella-beach"></i>
+					<p>Beaches</p>
+				</div>
+
+				<div class="filter">
+					<i class="fa-solid fa-person-swimming"></i>
+					<p>Pools</p>
+				</div>
+
+				<div class="filter">
+					<i class="fa-brands fa-houzz"></i>
+					<p>Cabins</p>
+				</div>
+
+				<div class="filter">
+					<i class="fa-solid fa-house-flood-water"></i>
+					<p>Lake front</p>
+				</div>
+
+				<div class="filter">
+					<i class="fa-solid fa-person-hiking"></i>
+					<p>Trekking</p>
+				</div>
+
+				<div class="filter">
+					<i class="fa-solid fa-campground"></i>
+					<p>Camping</p>
+				</div>
+
+				<div class="filter">
+					<i class="fa-solid fa-igloo"></i>
+					<p>Domes</p>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- Right arrow -->
+		<button type="button" class="filters-arrow" id="filtersArrow"
+			aria-label="Show more filters">
+			<i class="fa-solid fa-angle-right"></i>
+		</button>
+
+		<!-- Tax toggle -->
+		<div class="tax-toggle">
+			<div class="form-check-reverse form-switch">
+				<input
+					type="checkbox"
+					id="flexSwitchCheckDefault"
+					class="form-check-input"
+					role="switch">
+
+				<label class="form-check-label" for="flexSwitchCheckDefault">
+					Display total after taxes
+				</label>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Page Header -->
+	<div class="listings-header">
+		<div>
+			<span class="section-tag">
+				<%= search ? "SEARCH RESULTS" : "FIND YOUR NEXT GETAWAY" %>
+			</span>
+
+			<h1>
+				<%= search ? `Results for "${search}"` : "Explore stays" %>
+			</h1>
+
+			<p>
+				<%= search
+				? `Showing stays matching your search.`
+				: "Discover unique places to stay and make unforgettable memories."
+				%>
+			</p>
+		</div>
+
+		<a href="/listings/new" class="btn btn-dark add-listing-btn">
+			<i class="fa-solid fa-plus"></i>
+			Add New Listing
+		</a>
+	</div>
+
+
+	<!-- Listings Grid -->
+
+	<% if (allListings.length === 0) { %>
+
+	<div class="listings-empty">
+		<i class="fa-solid fa-house-circle-xmark"></i>
+
+		<% if (search) { %>
+		<h3>No matching listings found</h3>
+		<p>
+			We couldn't find any stays matching
+			"<%= search %>".
+		</p>
+		<% } else { %>
+		<h3>No listings yet</h3>
+		<p>Be the first to add a beautiful place to stay.</p>
+		<% } %>
+
+		<a href="/listings" class="btn btn-dark">
+			View All Listings
+		</a>
+	</div>
+
+	<% } else { %>
+
+	<div class="listings-grid">
+
+		<% for (const listing of allListings) { %>
+
+		<a href="/listings/<%= listing._id %>" class="listing-item">
+
+			<article class="listing-card">
+
+				<div class="listing-image-container">
+					<img
+						src="<%= listing.image.url %>"
+						class="listing-image"
+						alt="<%= listing.title %>"
+						loading="lazy" />
+
+					<span class="listing-image-badge">
+						<i class="fa-solid fa-house"></i>
+						Stay
+					</span>
+				</div>
+
+				<div class="listing-card-content">
+
+					<div class="listing-card-heading">
+						<h2 class="listing-card-title">
+							<%= listing.title %>
+						</h2>
+					</div>
+
+					<p class="listing-card-location">
+						<span class="listing-location-icon">
+							<i class="fa-solid fa-location-dot"></i>
+						</span>
+						<%= listing.location %>, <%= listing.country %>
+					</p>
+
+					<p class="listing-card-description">
+						<%= listing.description %>
+					</p>
+
+					<div class="listing-card-footer">
+						<div class="listing-card-price">
+							<strong class="price" data-base-price="<%= listing.price %>">
+								&#8377;<%= Number(listing.price).toLocaleString("en-IN") %>
+							</strong>
+
+							<span>
+								/ night
+								<i class="tax-info">&nbsp; &nbsp; +18% GST</i>
+							</span>
+						</div>
+
+						<span class="view-listing">
+							View details
+							<i class="fa-solid fa-arrow-right"></i>
+						</span>
+					</div>
+
+				</div>
+			</article>
+
+		</a>
+
+		<% } %>
+
+	</div>
+
+	<% } %>
+
+</div>

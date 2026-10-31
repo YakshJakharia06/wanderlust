@@ -1,0 +1,92 @@
+
+<% layout('layouts/boilerplate') %>
+
+<div class="edit-review-page">
+    <div class="edit-review-header">
+        <span class="section-tag">SHARE YOUR EXPERIENCE</span>
+        <h1>Edit Your Review</h1>
+        <p>Update your rating and tell others about your stay.</p>
+    </div>
+
+    <div class="edit-review-card">
+        <div class="create-form-heading">
+            <div class="create-form-icon">
+                <i class="fa-regular fa-pen-to-square"></i>
+            </div>
+            <div>
+                <h2>Review Details</h2>
+                <p>Make changes to your existing review.</p>
+            </div>
+        </div>
+
+        <hr class="create-form-divider">
+
+        <form action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=PUT"
+              method="POST"
+              class="needs-validation edit-review-form"
+              novalidate>
+
+            <div class="mb-4">
+                <label for="rating" class="form-label">
+                    Your Rating <span class="required-star">*</span>
+                </label>
+
+                <div class="rating-control">
+                    <div class="rating-value">
+                        <i class="fa-solid fa-star"></i>
+                        <span id="ratingValue"><%= review.rating %></span>
+                        <span class="rating-out-of">/ 5</span>
+                    </div>
+
+                    <input type="range"
+                           min="1"
+                           max="5"
+                           step="1"
+                           name="review[rating]"
+                           id="rating"
+                           value="<%= review.rating %>"
+                           class="form-range"
+                           required>
+
+                    <div class="rating-labels">
+                        <span>Poor</span>
+                        <span>Average</span>
+                        <span>Excellent</span>
+                    </div>
+
+                    <div class="invalid-feedback">
+                        Please select a rating.
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="comment" class="form-label">
+                    Your Comment <span class="required-star">*</span>
+                </label>
+
+                <textarea name="review[comment]"
+                          id="comment"
+                          class="form-control review-textarea"
+                          placeholder="Share what you liked or what could be improved..."
+                          minlength="3"
+                          required><%= review.comment %></textarea>
+
+                <div class="invalid-feedback">
+                    Please enter a comment of at least 3 characters.
+                </div>
+            </div>
+
+            <div class="edit-review-actions">
+                <a href="/listings/<%= listing._id %>" class="btn cancel-listing-btn">
+                    <i class="fa-solid fa-arrow-left"></i> Cancel
+                </a>
+
+                <button type="submit" class="btn btn-dark submit-review-btn">
+                    <i class="fa-solid fa-check"></i> Update Review
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+

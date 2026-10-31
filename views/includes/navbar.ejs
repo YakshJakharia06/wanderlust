@@ -1,0 +1,89 @@
+<nav class="navbar navbar-expand-lg sticky-top wanderlust-navbar">
+    <div class="container-fluid px-3 px-lg-4">
+
+        <!-- Brand -->
+        <a class="navbar-brand" href="/listings">
+            <i class="fa-regular fa-compass brand-icon"></i>
+            <span>WanderLust</span>
+        </a>
+
+        <!-- Search: outside collapse -->
+        <div class="navbar-search">
+            <form class="search-form" action="/listings" method="GET">
+
+                <div class="search-input-wrapper">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        class="form-control search-inp"
+                        type="search"
+                        name="search"
+                        value="<%= typeof search !== 'undefined' ? search : '' %>"
+                        placeholder="Search destination..."
+                        aria-label="Search destination">
+                </div>
+
+                <button class="btn btn-search" type="submit"><i
+                        class="fa-solid fa-magnifying-glass"></i> </button>
+
+            </form>
+        </div>
+
+        <!-- Mobile Toggle -->
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapsible Navigation -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+            <div class="navbar-layout">
+
+                <!-- Left Navigation -->
+                <div class="navbar-left">
+                    <ul class="navbar-nav">
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/listings">
+                                Explore
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/listings/new">
+                                New Listings
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <!-- Right Authentication -->
+                <div class="navbar-auth">
+
+                    <% if (!currUser) { %>
+                    <a class="nav-link auth-link" href="/signup">
+                        Sign Up
+                    </a>
+                    <a class="btn login-btn" href="/login">
+                        Login
+                    </a>
+                    <% } else { %>
+                    <a class="btn login-btn" href="/logout">
+                        Logout
+                    </a>
+                    <% } %>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
