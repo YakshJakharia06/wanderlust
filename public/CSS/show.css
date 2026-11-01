@@ -1,0 +1,926 @@
+/* =========================================================
+
+   LISTING DETAILS PAGE
+
+   ========================================================= */
+
+.listing-page {
+    width: 68%;
+    max-width: 1100px;
+    margin: 45px auto 70px;
+    padding: 0;
+    color: #222222;
+}
+
+
+
+.listing-header {
+    margin-bottom: 22px;
+}
+
+
+
+.listing-tag,
+.section-tag {
+    display: inline-block;
+    color: #777777;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+}
+
+
+
+.listing-title {
+    font-size: clamp(1.7rem, 3vw, 2.5rem);
+    font-weight: 700;
+    letter-spacing: -1px;
+    margin-bottom: 10px;
+    overflow-wrap: anywhere;
+}
+
+
+
+.listing-location {
+    color: #686868;
+    font-size: 0.95rem;
+    margin-bottom: 0;
+}
+
+
+
+.listing-location i {
+    margin-right: 6px;
+    color: #e63946;
+
+}
+
+
+
+/* Listing image */
+
+
+
+.listing-image-wrapper {
+    width: 100%;
+    height: clamp(280px, 42vw, 490px);
+    overflow: hidden;
+    border-radius: 18px;
+    background: #f2f2f2;
+}
+
+
+
+.listing-main-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+
+
+.listing-image-wrapper:hover .listing-main-image {
+    transform: scale(1.025);
+}
+
+
+
+/* Listing information */
+
+
+
+.listing-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 35px;
+    padding: 28px 0;
+}
+
+
+
+.listing-description {
+    flex: 1;
+    min-width: 0;
+
+}
+
+
+
+.listing-owner {
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 1rem;
+
+}
+
+
+
+.listing-description h3 {
+
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+
+}
+
+
+
+.listing-description p {
+
+    color: #686868;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+    margin-bottom: 0;
+}
+
+
+
+.listing-price {
+    flex-shrink: 0;
+    min-width: 180px;
+
+    padding: 18px 22px;
+    background: #f8f8f8;
+    border: 1px solid #eeeeee;
+    border-radius: 14px;
+
+}
+
+
+
+.price-label {
+    color: #777777;
+    font-size: 1.2rem;
+}
+
+
+
+.listing-price h2 {
+    font-size: 1.65rem;
+    font-weight: 700;
+
+    margin: 7px 0 0;
+}
+
+
+
+.listing-price small {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #777777;
+
+}
+
+
+
+/* Action buttons */
+
+
+
+.listing-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 0 0 30px;
+
+}
+
+
+
+.listing-actions form {
+    margin: 0;
+
+}
+
+
+
+.action-btn {
+    min-height: 43px;
+    display: inline-flex;
+
+
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 10px 20px;
+
+    border-radius: 9px;
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+    transition: all 0.2s ease;
+
+}
+
+
+
+.section-divider {
+
+    border: 0;
+
+    border-top: 1px solid #e6e6e6;
+
+    margin: 35px 0;
+
+    opacity: 1;
+
+}
+
+
+
+/* Review form */
+
+
+
+.review-form-section {
+
+    max-width: 760px;
+
+}
+
+
+
+.section-heading h2,
+
+
+
+.reviews-heading h2 {
+
+    font-size: 1.8rem;
+
+    font-weight: 700;
+
+    letter-spacing: -0.5px;
+
+    margin-bottom: 8px;
+
+}
+
+
+
+.section-heading p {
+
+    color: #777777;
+
+    margin-bottom: 28px;
+
+}
+
+
+
+.review-form .form-label {
+
+    font-size: 0.95rem;
+
+    font-weight: 600;
+
+    margin-bottom: 12px;
+
+}
+
+
+
+.rating-control {
+
+    padding: 15px 18px 10px;
+
+    background: #fafafa;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: 12px;
+
+}
+
+
+
+.review-form .form-range {
+
+    cursor: pointer;
+
+
+
+    accent-color: #222222;
+
+}
+
+
+
+.rating-labels {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    color: #777777;
+
+    font-size: 0.78rem;
+
+}
+
+
+
+.review-textarea {
+
+    min-height: 145px;
+
+    padding: 14px;
+
+    border-color: #dedede;
+
+    border-radius: 12px;
+
+    resize: vertical;
+
+    line-height: 1.7;
+
+}
+
+
+
+.review-textarea:focus {
+
+    border-color: #777777;
+
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.06);
+
+}
+
+
+
+.submit-review-btn {
+
+    display: inline-flex;
+
+
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    min-height: 45px;
+
+    padding: 12px 23px;
+
+    border-radius: 9px;
+
+    font-weight: 600;
+
+}
+
+
+
+/* Reviews heading */
+
+
+
+.reviews-heading {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+
+}
+
+
+
+.reviews {
+
+    display: flex;
+
+    justify-content: space-between;
+
+}
+
+
+
+.review-count {
+
+    flex-shrink: 0;
+
+    padding: 8px 13px;
+
+    border: 1px solid #e6e6e6;
+
+    border-radius: 30px;
+
+    color: #555555;
+
+    font-size: 0.85rem;
+
+}
+
+
+
+/* Review cards */
+
+
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+
+}
+
+
+
+.review-card {
+
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+
+    padding: 22px;
+    background: #ffffff;
+    border: 1px solid #e8e8e8;
+    border-radius: 15px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.035);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+
+.review-card:hover {
+
+    transform: translateY(-3px);
+    box-shadow: 0 9px 25px rgba(0, 0, 0, 0.07);
+
+}
+
+
+
+.review-card-header {
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-bottom: 18px;
+
+}
+
+
+
+.review-avatar {
+
+    width: 43px;
+    height: 43px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f2f2f2;
+    border-radius: 50%;
+
+    font-size: 1.1rem;
+
+}
+
+
+
+.review-author h5 {
+
+    font-size: 0.98rem;
+
+    font-weight: 900;
+
+}
+
+
+
+.review-author span {
+    color: #888888;
+    font-size: 0.78rem;
+
+}
+
+
+
+.review-stars {
+
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 4px;
+    color: #e5a000;
+
+    font-size: 0.85rem;
+    margin-bottom: 14px;
+
+}
+
+
+
+.review-stars span {
+
+    margin-left: 6px;
+    color: #555555;
+    font-weight: 600;
+}
+
+
+
+.review-comment {
+
+    color: #555555;
+
+    line-height: 1.8;
+    font-size: 0.92rem;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    flex: 1;
+
+    margin-bottom: 22px;
+
+}
+
+
+
+.review-card-actions {
+
+    display: flex;
+
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-top: 15px;
+    border-top: 1px solid #eeeeee;
+
+}
+
+
+
+.review-card-actions form {
+
+    margin: 0;
+}
+
+
+
+.review-card-actions .btn {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    border-radius: 7px;
+    padding: 7px 12px;
+
+}
+
+
+
+/* Empty reviews state */
+
+
+
+.empty-reviews {
+    padding: 55px 20px;
+    text-align: center;
+    background: #fafafa;
+    border: 1px dashed #dddddd;
+    border-radius: 15px;
+
+}
+
+
+
+.empty-reviews>i {
+    font-size: 2rem;
+    color: #999999;
+    margin-bottom: 15px;
+
+}
+
+
+
+.empty-reviews h4 {
+    font-weight: 700;
+    margin-bottom: 8px;
+
+}
+
+
+
+.empty-reviews p {
+    color: #777777;
+    margin: 0;
+
+}
+
+/*  TABLET RESPONSIVENESS */
+
+@media (max-width: 1100px) {
+
+
+
+    .listing-page {
+        width: 82%;
+
+    }
+
+
+
+    .listing-info {
+        gap: 20px;
+
+    }
+
+
+
+    .listing-price {
+        min-width: 155px;
+        padding: 16px;
+
+    }
+
+
+
+}
+
+
+
+/*
+   MOBILE RESPONSIVENESS
+ */
+
+@media (max-width: 768px) {
+
+
+
+    .listing-page {
+        width: 92%;
+        margin: 25px auto 45px;
+
+    }
+
+
+
+    .listing-title {
+        letter-spacing: -0.5px;
+
+    }
+
+
+
+    .listing-image-wrapper {
+        height: clamp(240px, 65vw, 370px);
+        border-radius: 13px;
+
+    }
+
+
+
+    .listing-info {
+        flex-direction: column;
+        gap: 20px;
+
+        padding: 23px 0;
+
+    }
+
+
+
+    .listing-price {
+        width: 100%;
+        min-width: 0;
+
+    }
+
+
+
+    .listing-actions {
+        gap: 10px;
+    }
+
+
+
+    .action-btn {
+
+        padding: 10px 14px;
+    }
+
+
+
+    .section-divider {
+
+        margin: 27px 0;
+    }
+
+
+
+    .section-heading h2,
+    .reviews-heading h2 {
+        font-size: 1.55rem;
+
+    }
+
+
+
+    .reviews-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+
+    }
+
+
+
+    .review-card {
+        padding: 18px;
+
+    }
+
+
+
+}
+
+
+
+@media (max-width: 420px) {
+
+
+
+    .listing-page {
+        width: 94%;
+        margin-top: 18px;
+
+    }
+
+
+
+    .listing-title {
+        font-size: 1.65rem;
+
+    }
+
+
+
+    .listing-image-wrapper {
+        height: 245px;
+
+    }
+
+
+
+    .listing-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+
+
+    .listing-actions form,
+    .listing-actions form button {
+        width: 100%;
+
+    }
+
+
+
+    .action-btn {
+        width: 100%;
+        padding: 10px 8px;
+        font-size: 0.8rem;
+
+    }
+
+
+
+    .rating-labels {
+        font-size: 0.68rem;
+
+    }
+
+
+
+    .reviews-heading {
+        align-items: flex-start;
+    }
+
+
+
+    .review-count {
+        font-size: 0.75rem;
+        padding: 7px 10px;
+    }
+
+
+
+}
+
+/* MapBox */
+
+
+
+\#map {
+
+    width: 100%;
+    height: 400px;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin-top: 20px;
+    border-radius: 12px;
+
+}
+
+
+
+
+
+.listing-map-section {
+    position: relative;
+    clear: both;
+    width: 100%;
+    margin: 30px 0;
+
+}
+
+
+
+.listing-map-section .container-fluid {
+    position: relative;
+
+}
+
+
+
+
+
+/* marker of the map */
+
+
+
+.hover-map-marker {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+}
+
+
+
+.location-icon {
+    font-size: 40px;
+    color: #fe424d;
+    transition: opacity 0.2s, transform 0.2s;
+
+}
+
+
+
+.compass-icon {
+    position: absolute;
+    font-size: 36px;
+    color: #fe424d;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: opacity 0.2s, transform 0.2s;
+
+}
+
+
+
+.hover-map-marker:hover .location-icon {
+    opacity: 0;
+    transform: scale(0.5);
+
+}
+
+
+
+.hover-map-marker:hover .compass-icon {
+    opacity: 1;
+    transform: scale(1);
+
+}

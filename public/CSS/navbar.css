@@ -1,0 +1,655 @@
+/* =========================================================
+
+   NAVBAR
+
+   ========================================================= */
+
+
+
+/* ==============================
+
+   WANDERLUST NAVBAR
+
+\================================ */
+
+
+
+.wanderlust-navbar {
+
+    min-height: 78px;
+
+    background-color: #ffffff;
+
+    border-bottom: 1px solid #eeeeee;
+
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+
+    padding: 0.65rem 0;
+
+    z-index: 1000;
+
+}
+
+
+
+/* Brand */
+
+
+
+.wanderlust-navbar .navbar-brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    font-size: 1.35rem;
+
+    font-weight: 700;
+
+    color: #222222;
+
+    letter-spacing: -0.5px;
+
+}
+
+
+
+.brand-icon {
+
+    font-size: 2rem;
+
+    color: #fe424d;
+
+    transition: transform 0.4s ease;
+
+}
+
+
+
+.navbar-brand:hover .brand-icon {
+
+    transform: rotate(45deg);
+
+}
+
+
+
+/* Main navbar layout */
+
+
+
+.navbar-layout {
+
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 420px) minmax(0, 1fr);
+
+    align-items: center;
+
+    gap: 1.5rem;
+
+    width: 100%;
+
+}
+
+
+
+/* Left navigation */
+
+
+
+.navbar-left .navbar-nav {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+}
+
+
+
+.wanderlust-navbar .nav-link {
+
+    color: #555555;
+
+    font-weight: 500;
+
+    font-size: 0.95rem;
+
+    transition: color 0.2s ease;
+
+}
+
+
+
+.wanderlust-navbar .nav-link:hover,
+
+.wanderlust-navbar .nav-link.active {
+
+    color: #fe424d;
+
+}
+
+
+
+/* Center search */
+
+
+
+.navbar-search {
+
+    width: 100%;
+
+}
+
+
+
+.search-form {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    width: 100%;
+
+}
+
+
+
+.search-input-wrapper {
+
+    display: flex;
+
+    align-items: center;
+
+    flex: 1;
+
+    background-color: #f7f7f7;
+
+    border: 1px solid #e5e5e5;
+
+    border-radius: 30px;
+
+    padding: 0 15px;
+
+    transition: all 0.25s ease;
+
+}
+
+
+
+.search-input-wrapper i {
+
+    color: #999999;
+
+    font-size: 0.9rem;
+
+}
+
+
+
+.search-input-wrapper:focus-within {
+
+    border-color: #fe424d;
+
+    background-color: #ffffff;
+
+    box-shadow: 0 0 0 3px rgba(254, 66, 77, 0.1);
+
+}
+
+
+
+.search-inp {
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    box-shadow: none !important;
+
+    padding: 0.7rem 0.75rem;
+
+    font-size: 0.9rem;
+
+}
+
+
+
+.search-inp:focus {
+
+    background: transparent;
+
+}
+
+
+
+.search-inp::placeholder {
+
+    color: #999999;
+
+}
+
+
+
+.btn-search {
+
+    background-color: #fe424d;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 30px;
+
+    padding: 0.7rem 1.3rem;
+
+    font-weight: 600;
+
+    transition: all 0.25s ease;
+
+}
+
+
+
+.btn-search:hover {
+
+    background-color: #e8323e;
+
+    color: white;
+
+    transform: translateY(-1px);
+
+}
+
+
+
+/* Right authentication */
+
+
+
+.navbar-auth {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    gap: 12px;
+
+}
+
+
+
+.wanderlust-navbar .auth-link {
+
+    font-weight: 600;
+
+}
+
+
+
+.login-btn {
+
+    background-color: #222222;
+
+    color: white;
+
+    border-radius: 25px;
+
+    padding: 0.55rem 1.25rem;
+
+    font-weight: 600;
+
+    transition: all 0.25s ease;
+
+}
+
+
+
+.login-btn:hover {
+
+    background-color: #fe424d;
+
+    color: white;
+
+}
+
+
+
+/* Mobile responsive */
+
+
+
+@media (max-width: 991.98px) {
+
+
+
+    .wanderlust-navbar {
+
+        min-height: 68px;
+
+    }
+
+
+
+    .navbar-layout {
+
+        grid-template-columns: 1fr;
+
+        gap: 1rem;
+
+        padding: 1rem 0;
+
+    }
+
+
+
+    .navbar-search {
+
+        grid-row: 1;
+
+    }
+
+
+
+    .navbar-left {
+
+        grid-row: 2;
+
+    }
+
+
+
+    .navbar-auth {
+
+        grid-row: 3;
+
+        justify-content: flex-start;
+
+    }
+
+
+
+    .navbar-left .navbar-nav {
+
+        align-items: flex-start;
+
+        gap: 5px;
+
+    }
+
+
+
+    .search-form {
+
+        max-width: 100%;
+
+    }
+
+}
+
+/* NAVBAR */
+
+/* Search stays centered on desktop */
+
+.wanderlust-navbar .container-fluid {
+
+    position: relative;
+
+}
+
+
+
+.navbar-search {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 420px;
+
+    max-width: 35%;
+
+    z-index: 2;
+
+}
+
+
+
+/* Navigation layout */
+
+.navbar-layout {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    width: 100%;
+
+}
+
+
+
+/* Mobile and tablet */
+
+@media (max-width: 991.98px) {
+
+
+
+    .wanderlust-navbar .container-fluid {
+
+        display: grid;
+
+        grid-template-columns: auto minmax(0, 1fr) auto;
+
+        gap: 0 10px;
+
+        align-items: center;
+
+    }
+
+
+
+    /* Brand on left */
+
+    .wanderlust-navbar .navbar-brand {
+
+        grid-column: 1;
+
+        grid-row: 1;
+
+        font-size: 1.05rem;
+
+        margin: 0;
+
+        white-space: nowrap;
+
+    }
+
+
+
+    /* Search stays visible in center */
+
+    .navbar-search {
+
+        position: static;
+
+        transform: none;
+
+        grid-column: 2;
+
+        grid-row: 1;
+
+        width: 100%;
+
+        max-width: 100%;
+
+        min-width: 0;
+
+    }
+
+
+
+    .search-form {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 5px;
+
+        width: 100%;
+
+    }
+
+
+
+    .search-input-wrapper {
+
+        min-width: 0;
+
+        flex: 1;
+
+        padding: 0 8px;
+
+    }
+
+
+
+    .search-inp {
+
+        min-width: 0;
+
+        width: 100%;
+
+        padding: 0.6rem 0.4rem;
+
+        font-size: 0.8rem;
+
+    }
+
+
+
+    .btn-search {
+
+        flex-shrink: 0;
+
+        padding: 0.6rem 0.8rem;
+
+        font-size: 0.8rem;
+
+    }
+
+
+
+    /* Hamburger on right */
+
+    .wanderlust-navbar .navbar-toggler {
+
+        grid-column: 3;
+
+        grid-row: 1;
+
+        margin: 0;
+
+        padding: 0.35rem 0.5rem;
+
+    }
+
+
+
+    /* Collapsed menu occupies second row */
+
+    .wanderlust-navbar .navbar-collapse {
+
+        grid-column: 1 / -1;
+
+        grid-row: 2;
+
+        width: 100%;
+
+        margin-top: 12px;
+
+    }
+
+
+
+    .navbar-layout {
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 12px;
+
+        padding: 10px 0;
+
+    }
+
+
+
+    .navbar-auth {
+
+        justify-content: flex-start;
+
+    }
+
+}
+
+
+
+/* Very small screens */
+
+@media (max-width: 400px) {
+
+
+
+    .wanderlust-navbar .navbar-brand span {
+
+        display: none;
+
+    }
+
+
+
+    .wanderlust-navbar .navbar-brand {
+
+        font-size: 1.4rem;
+
+    }
+
+
+
+    .search-inp::placeholder {
+
+        font-size: 0.7rem;
+
+    }
+
+
+
+    .btn-search {
+
+        padding: 0.55rem 0.65rem;
+
+    }
+
+}

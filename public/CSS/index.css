@@ -1,0 +1,963 @@
+/* =========================================================
+
+MAIN LISTINGS PAGE
+
+\========================================================= */
+
+
+
+.danger {
+
+    background: rgba(80, 0, 10, 0.81);
+
+    color: #e94b63;
+
+    border: 2px solid #e94b63;
+
+    border-radius: 15px;
+
+    padding: 18px 16px;
+
+    backdrop-filter: blur(6px);
+
+    -webkit-backdrop-filter: blur(6px);
+
+    box-shadow: 0 0 12px rgba(165, 29, 50, 0.08);
+
+    font-size: 16px;
+
+}
+
+
+
+.listings-page {
+
+    width: 88%;
+
+    max-width: 1440px;
+
+    margin: 45px auto 70px;
+
+    padding: 0;
+
+}
+
+
+
+/* Page header */
+
+
+
+.listings-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+
+
+    align-items: center;
+
+    gap: 25px;
+
+    margin-bottom: 35px;
+
+}
+
+
+
+.listings-header .section-tag {
+
+    display: inline-block;
+
+    color: #777777;
+
+    font-size: 0.72rem;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 8px;
+
+}
+
+
+
+.listings-header h1 {
+
+    font-size: clamp(2rem, 4vw, 2.8rem);
+
+    font-weight: 750;
+
+    letter-spacing: -1.2px;
+
+    margin: 0 0 10px;
+
+}
+
+
+
+.listings-header p {
+
+    color: #777777;
+
+    line-height: 1.7;
+
+    margin: 0;
+
+}
+
+
+
+.add-listing-btn {
+
+    display: inline-flex;
+
+
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    flex-shrink: 0;
+
+    padding: 12px 18px;
+
+    border-radius: 10px;
+
+    font-weight: 600;
+
+    transition: transform 0.2s ease, *background* 0.2s ease;
+
+}
+
+
+
+.add-listing-btn:hover {
+
+    transform: translateY(-2px);
+
+}
+
+
+
+/* Responsive card grid */
+
+
+
+.listings-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 30px 24px;
+
+}
+
+
+
+.listing-item {
+
+    display: block;
+
+    min-width: 0;
+
+    color: inherit;
+
+    text-decoration: none;
+
+}
+
+
+
+.listing-card {
+
+    height: 100%;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: 17px;
+
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.035);
+
+    transition:
+
+        transform 0.25s ease,
+
+        box-shadow 0.25s ease,
+
+        border-color 0.25s ease;
+
+}
+
+
+
+.listing-item:hover .listing-card {
+
+    transform: translateY(-5px);
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.09);
+
+    border-color: #dddddd;
+
+}
+
+
+
+/* Card image */
+
+
+
+.listing-image-container {
+
+    position: relative;
+
+    width: 100%;
+
+
+
+    aspect-ratio: 4 / 3;
+
+    overflow: hidden;
+
+    background: #f2f2f2;
+
+}
+
+
+
+.listing-image {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.45s ease;
+
+}
+
+
+
+.listing-item:hover .listing-image {
+
+    transform: scale(1.05);
+
+}
+
+
+
+.listing-image-badge {
+
+    position: absolute;
+
+    top: 13px;
+
+    left: 13px;
+
+    display: inline-flex;
+
+
+
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 7px 11px;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    color: #333333;
+
+    border-radius: 30px;
+
+    font-size: 0.75rem;
+
+    font-weight: 600;
+
+}
+
+
+
+/* Card content */
+
+
+
+.listing-card-content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 19px;
+
+    min-height: 225px;
+
+}
+
+
+
+.listing-card-heading {
+
+    display: flex;
+
+
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+}
+
+
+
+.listing-card-title {
+
+    font-size: 1.08rem;
+
+    line-height: 1.45;
+
+    font-weight: 700;
+
+    margin: 0;
+
+    overflow-wrap: anywhere;
+
+}
+
+
+
+.listing-location-icon {
+
+    flex-shrink: 0;
+
+    color: #e63946;
+
+    padding-top: 3px;
+
+}
+
+
+
+.listing-card-location {
+
+    color: #777777;
+
+    font-size: 0.84rem;
+
+    margin: 7px 0 12px;
+
+    overflow-wrap: anywhere;
+
+}
+
+
+
+.listing-card-description {
+
+    display: -webkit-box;
+
+    -webkit-box-orient: vertical;
+
+    line-clamp: 2;
+
+    overflow: hidden;
+
+    color: #666666;
+
+    font-size: 0.9rem;
+
+    line-height: 1.7;
+
+    margin: 0 0 18px;
+
+    overflow-wrap: anywhere;
+
+}
+
+
+
+/* Price and details link */
+
+
+
+.listing-card-footer {
+
+    display: flex;
+
+    justify-content: space-between;
+
+
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: auto;
+
+    padding-top: 15px;
+
+    border-top: 1px solid #eeeeee;
+
+}
+
+
+
+.listing-card-price {
+
+    display: flex;
+
+
+
+    align-items: baseline;
+
+    flex-wrap: wrap;
+
+    gap: 5px;
+
+}
+
+
+
+.listing-card-price strong {
+
+    font-size: 1.1rem;
+
+    font-weight: 750;
+
+    color: #222222;
+
+}
+
+
+
+.listing-card-price span {
+
+    color: #777777;
+
+    font-size: 0.78rem;
+
+}
+
+
+
+.view-listing {
+
+    display: inline-flex;
+
+
+
+    align-items: center;
+
+    gap: 6px;
+
+    color: #333333;
+
+    font-size: 0.78rem;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    transition: gap 0.2s ease;
+
+}
+
+
+
+.listing-item:hover .view-listing {
+
+    gap: 10px;
+
+}
+
+
+
+/* Empty state */
+
+
+
+.listings-empty {
+
+    padding: 70px 20px;
+
+    text-align: center;
+
+    border: 1px dashed #dddddd;
+
+    border-radius: 18px;
+
+    background: #fafafa;
+
+}
+
+
+
+.listings-empty>i {
+
+    color: #999999;
+
+    font-size: 2.6rem;
+
+    margin-bottom: 20px;
+
+}
+
+
+
+.listings-empty h3 {
+
+    font-size: 1.5rem;
+
+    font-weight: 700;
+
+}
+
+
+
+.listings-empty p {
+
+    color: #777777;
+
+    margin: 10px 0 20px;
+
+}
+
+
+
+/* Filters container */
+
+\#filters {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    width: 100%;
+
+    margin-bottom: 25px;
+
+}
+
+
+
+/* Scrollable area */
+
+.filters-viewport {
+
+    flex: 1;
+
+    min-width: 0;
+
+    overflow-x: auto;
+
+    scroll-behavior: smooth;
+
+    scrollbar-width: none;
+
+}
+
+
+
+.filters-viewport::-webkit-scrollbar {
+
+    display: none;
+
+}
+
+
+
+/* Filters in a single row */
+
+.filters-track {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+    width: max-content;
+
+    padding: 10px 0;
+
+}
+
+
+
+/* Individual filter */
+
+.filter {
+
+    flex: 0 0 auto;
+
+    min-width: 65px;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    color: #717171;
+
+    transition: color 0.2s ease;
+
+}
+
+
+
+.filter i {
+
+    font-size: 1.3rem;
+
+    margin-bottom: 8px;
+
+}
+
+
+
+.filter p {
+
+    font-size: 0.8rem;
+
+    margin: 0;
+
+    white-space: nowrap;
+
+}
+
+
+
+.filter:hover {
+
+    color: #222;
+
+}
+
+
+
+/* Arrow button */
+
+.filters-arrow {
+
+    flex: 0 0 38px;
+
+    width: 38px;
+
+    height: 38px;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 50%;
+
+    background: white;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition: all 0.2s ease;
+
+}
+
+
+
+.filters-arrow:hover {
+
+    background: #f7f7f7;
+
+    border-color: #222;
+
+}
+
+
+
+.filters-arrow[hidden] {
+
+    display: none;
+
+}
+
+
+
+/* Tax toggle */
+
+.tax-toggle {
+
+    flex: 0 0 auto;
+
+    padding: 12px 15px;
+
+    border: 1px solid #dddddd;
+
+    border-radius: 12px;
+
+    white-space: nowrap;
+
+    background: white;
+
+}
+
+
+
+/* Responsive */
+
+@media (max-width: 768px) {
+
+
+
+    #filters {
+
+        flex-wrap: wrap;
+
+        gap: 12px;
+
+    }
+
+
+
+    .filters-viewport {
+
+        flex: 1 1 calc(100% - 50px);
+
+    }
+
+
+
+    .tax-toggle {
+
+        flex-basis: 100%;
+
+        padding: 10px;
+
+    }
+
+}
+
+
+
+
+
+
+
+/* =========================================================
+
+   TABLET
+
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+
+
+    .listings-page {
+
+        width: 92%;
+
+    }
+
+
+
+    .listings-grid {
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 24px 20px;
+
+    }
+
+
+
+}
+
+
+
+/* =========================================================
+
+   MOBILE
+
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+
+
+    .listings-page {
+
+        width: 92%;
+
+        margin: 28px auto 45px;
+
+    }
+
+
+
+    .listings-header {
+
+
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 18px;
+
+        margin-bottom: 25px;
+
+    }
+
+
+
+    .listings-header h1 {
+
+        font-size: 2rem;
+
+    }
+
+
+
+    .listings-header p {
+
+        font-size: 0.9rem;
+
+    }
+
+
+
+    .add-listing-btn {
+
+        width: 100%;
+
+    }
+
+
+
+    .listings-grid {
+
+        grid-template-columns: minmax(0, 1fr);
+
+        gap: 22px;
+
+    }
+
+
+
+    .listing-image-container {
+
+
+
+        aspect-ratio: 5 / 3;
+
+    }
+
+
+
+    .listing-card-content {
+
+        min-height: 0;
+
+        padding: 17px;
+
+    }
+
+
+
+    .listing-card-title {
+
+        font-size: 1.05rem;
+
+    }
+
+
+
+    .listing-card-description {
+
+        margin-bottom: 18px;
+
+    }
+
+
+
+}
+
+
+
+/* Smaller phones */
+
+
+
+@media (max-width: 360px) {
+
+
+
+    .listings-page {
+
+        width: 94%;
+
+    }
+
+
+
+    .listing-card-footer {
+
+
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+    }
+
+
+
+}
+
+
+
+/* Respect reduced motion preferences */
+
+
+
+@media (prefers-reduced-motion: reduce) {
+
+
+
+    .listing-card,
+
+
+
+    .listing-image,
+
+
+
+    .add-listing-btn,
+
+
+
+    .view-listing {
+
+        transition: none;
+
+    }
+
+
+
+}

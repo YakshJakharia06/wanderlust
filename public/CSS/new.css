@@ -1,0 +1,573 @@
+/* =========================================================
+
+   CREATE LISTING PAGE
+
+   ========================================================= */
+
+.create-listing-page {
+
+    width: 90%;
+
+    max-width: 850px;
+
+    margin: 45px auto 75px;
+
+}
+
+
+
+/* Header */
+
+
+
+.create-listing-header {
+
+    text-align: center;
+
+    margin-bottom: 32px;
+
+}
+
+
+
+.create-listing-header .section-tag {
+
+    display: inline-block;
+
+    color: #777777;
+
+    font-size: 0.72rem;
+
+    font-weight: 700;
+
+    letter-spacing: 1.6px;
+
+    margin-bottom: 10px;
+
+}
+
+
+
+.create-listing-header h1 {
+
+    font-size: clamp(1.9rem, 4vw, 2.6rem);
+
+    font-weight: 750;
+
+    letter-spacing: -1px;
+
+    margin-bottom: 12px;
+
+}
+
+
+
+.create-listing-header p {
+
+    max-width: 570px;
+
+    margin: 0 auto;
+
+    color: #777777;
+
+    line-height: 1.8;
+
+}
+
+
+
+/* Form card */
+
+
+
+.create-listing-card {
+
+    padding: 35px 38px;
+
+    background: #ffffff;
+
+    border: 1px solid #eaeaea;
+
+    border-radius: 20px;
+
+    box-shadow: 0 8px 35px rgba(0, 0, 0, 0.045);
+
+}
+
+
+
+.create-form-heading {
+
+    display: flex;
+
+
+
+    align-items: center;
+
+    gap: 15px;
+
+}
+
+
+
+.create-form-icon {
+
+    width: 52px;
+
+    height: 52px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #f3f3f3;
+
+    color: #222222;
+
+    border-radius: 14px;
+
+    font-size: 1.25rem;
+
+}
+
+
+
+.create-form-heading h2 {
+
+    font-size: 1.25rem;
+
+    font-weight: 700;
+
+    margin-bottom: 5px;
+
+}
+
+
+
+.create-form-heading p {
+
+    color: #777777;
+
+    font-size: 0.88rem;
+
+    margin-bottom: 0;
+
+}
+
+
+
+.create-form-divider {
+
+    margin: 25px 0 28px;
+
+    border-color: #e8e8e8;
+
+    opacity: 1;
+
+}
+
+
+
+/* Labels and inputs */
+
+
+
+.create-listing-form .form-label {
+
+    display: block;
+
+    color: #292929;
+
+    font-size: 0.91rem;
+
+    font-weight: 650;
+
+    margin-bottom: 9px;
+
+}
+
+
+
+.required-star {
+
+    color: #dc3545;
+
+}
+
+
+
+.create-listing-form .form-control {
+
+    min-height: 48px;
+
+    padding: 12px 14px;
+
+    border: 1px solid #dedede;
+
+    border-radius: 10px;
+
+    font-size: 0.91rem;
+
+    background-color: #ffffff;
+
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+}
+
+
+
+.create-listing-form .form-control::placeholder {
+
+    color: #a0a0a0;
+
+}
+
+
+
+.create-listing-form .form-control:focus {
+
+    border-color: #555555;
+
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.06);
+
+}
+
+
+
+.create-listing-form .create-description {
+
+    min-height: 140px;
+
+    resize: vertical;
+
+    line-height: 1.7;
+
+}
+
+
+
+.create-listing-form .form-text {
+
+    color: #858585;
+
+    font-size: 0.78rem;
+
+    margin-top: 8px;
+
+}
+
+
+
+.input-with-icon {
+
+    position: relative;
+
+}
+
+
+
+.input-with-icon>i {
+
+    position: absolute;
+
+    z-index: 2;
+
+    top: 50%;
+
+    left: 15px;
+
+    transform: translateY(-50%);
+
+    color: #858585;
+
+    font-size: 0.9rem;
+
+    pointer-events: none;
+
+}
+
+
+
+.input-with-icon .form-control {
+
+    padding-left: 42px;
+
+}
+
+
+
+/* Form buttons */
+
+
+
+.create-form-actions {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 12px;
+
+    margin-top: 32px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid #eeeeee;
+
+}
+
+
+
+.cancel-listing-btn,
+
+
+
+.create-listing-submit {
+
+    min-height: 46px;
+
+    display: inline-flex;
+
+
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    padding: 12px 22px;
+
+    border-radius: 10px;
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+}
+
+
+
+.cancel-listing-btn {
+
+    border: 1px solid #dedede;
+
+}
+
+
+
+.create-listing-submit {
+
+    min-width: 180px;
+
+}
+
+
+
+.cancel-listing-btn:hover,
+
+
+
+.create-listing-submit:hover {
+
+    transform: translateY(-1px);
+
+}
+
+
+
+.form-footer-note {
+
+    display: flex;
+
+
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin: 20px 0 0;
+
+    color: #858585;
+
+    font-size: 0.8rem;
+
+}
+
+
+
+.form-footer-note>i {
+
+    flex-shrink: 0;
+
+}
+
+
+
+/* =========================================================
+
+   TABLET AND MOBILE
+
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+
+
+    .create-listing-page {
+
+        width: 92%;
+
+        margin: 30px auto 50px;
+
+    }
+
+
+
+    .create-listing-header {
+
+        margin-bottom: 25px;
+
+    }
+
+
+
+    .create-listing-card {
+
+        padding: 27px 24px;
+
+        border-radius: 16px;
+
+    }
+
+
+
+}
+
+
+
+@media (max-width: 480px) {
+
+
+
+    .create-listing-page {
+
+        width: 94%;
+
+        margin-top: 24px;
+
+    }
+
+
+
+    .create-listing-header h1 {
+
+        font-size: 1.85rem;
+
+    }
+
+
+
+    .create-listing-header p {
+
+        font-size: 0.88rem;
+
+    }
+
+
+
+    .create-listing-card {
+
+        padding: 22px 17px;
+
+    }
+
+
+
+    .create-form-heading {
+
+        gap: 11px;
+
+    }
+
+
+
+    .create-form-icon {
+
+        width: 44px;
+
+        height: 44px;
+
+        border-radius: 11px;
+
+    }
+
+
+
+    .create-form-heading h2 {
+
+        font-size: 1.1rem;
+
+    }
+
+
+
+    .create-form-heading p {
+
+        font-size: 0.8rem;
+
+    }
+
+
+
+    .create-form-actions {
+
+        flex-direction: column-reverse;
+
+    }
+
+
+
+    .cancel-listing-btn,
+
+
+
+    .create-listing-submit {
+
+        width: 100%;
+
+    }
+
+
+
+}
+
+
+
+@media (prefers-reduced-motion: reduce) {
+
+
+
+    .create-listing-form .form-control,
+
+
+
+    .cancel-listing-btn,
+
+
+
+    .create-listing-submit {
+
+        transition: none;
+
+    }
+
+
+
+}
